@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "612072520569",
+    "firebase_url": "https://new-room-5cf85.firebaseio.com",
+    "project_id": "new-room-5cf85",
+    "storage_bucket": "new-room-5cf85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612072520569:android:27ad40e3e0ac29e0",
+        "android_client_info": {
+          "package_name": "com.room.saksham.kamre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612072520569-r6jatihg9e0ntqb65lcs2lq6a9kgt7vm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.room.saksham.kamre",
+            "certificate_hash": "872edf897e50ea3cd24b65dc35dd0577c556bba6"
+          }
+        },
+        {
+          "client_id": "612072520569-8bct6e1hem24u9baj50lc3cisu1mia7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkz5kLQvJL2qCaj3HjhTjIR1wFnfvM7Vw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612072520569-8bct6e1hem24u9baj50lc3cisu1mia7c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
