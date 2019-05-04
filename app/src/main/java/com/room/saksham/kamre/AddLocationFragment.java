@@ -9,6 +9,8 @@ import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -28,6 +30,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +50,8 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
     TextView textView,button;
     LocationManager locationManager;
     String lattitude,longitude;
+    Geocoder geocoder;
+    List<Address> addresses;
 
     //add views
     //imageviews
@@ -124,6 +132,9 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
         //attach the views to the fragment
         mCityTown = (EditText)rootView.findViewById(R.id.add_room_town_edit_text);
         mSuburb = (EditText)rootView.findViewById(R.id.add_room_suburb_edit_text);
+
+        //geocoder
+        geocoder = new Geocoder(rootView.getContext(), Locale.getDefault());
 
         //imageviews
         mBic = (ImageView)rootView.findViewById(R.id.add_room_bic_imageview);
@@ -321,10 +332,10 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                 //pass the data captured to container activity
                 //data will be accessed via the interface implemented
                 /*
-                * for the data captured via colour change
-                * 1. check if colour of value is #ff4081
-                *   if true, set property value, else set to null and return
-                * */
+                 * for the data captured via colour change
+                 * 1. check if colour of value is #ff4081
+                 *   if true, set property value, else set to null and return
+                 * */
 
                 mGetLocAmenitiesPrefOnNext.passCity(mCityTown.getText().toString());
                 mGetLocAmenitiesPrefOnNext.passSuburb(mSuburb.getText().toString());
@@ -478,8 +489,23 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                mCityTown.setText(lattitude);
-                mSuburb.setText(longitude);
+                try {
+                    addresses = geocoder.getFromLocation(latti, longi, 1);
+
+                    //String address = addresses.get(0).getAddressLine(0);
+                    String area = addresses.get(0).getLocality();
+                    String city = addresses.get(0).getAdminArea();
+                    //String country = addresses.get(0).getCountryName();
+                    //String postalcode = addresses.get(0).getPostalCode();
+                    String fullAddress = area + ", " + city ;
+                    mCityTown.setText(fullAddress);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                //mCityTown.setText(lattitude);
+                mSuburb.setText(lattitude+","+longitude);
 
             } else  if (location1 != null) {
                 double latti = location1.getLatitude();
@@ -487,8 +513,23 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                mCityTown.setText(lattitude);
-                mSuburb.setText(longitude);
+                try {
+                    addresses = geocoder.getFromLocation(latti, longi, 1);
+
+                    //String address = addresses.get(0).getAddressLine(0);
+                    String area = addresses.get(0).getLocality();
+                    String city = addresses.get(0).getAdminArea();
+                    //String country = addresses.get(0).getCountryName();
+                    //String postalcode = addresses.get(0).getPostalCode();
+                    String fullAddress = area + ", " + city ;
+                    mCityTown.setText(fullAddress);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                //mCityTown.setText(lattitude);
+                mSuburb.setText(lattitude+","+longitude);
 
 
             } else  if (location2 != null) {
@@ -497,8 +538,23 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                mCityTown.setText(lattitude);
-                mSuburb.setText(longitude);
+                try {
+                    addresses = geocoder.getFromLocation(latti, longi, 1);
+
+                    //String address = addresses.get(0).getAddressLine(0);
+                    String area = addresses.get(0).getLocality();
+                    String city = addresses.get(0).getAdminArea();
+                    //String country = addresses.get(0).getCountryName();
+                    //String postalcode = addresses.get(0).getPostalCode();
+                    String fullAddress = area + ", " + city;
+                    mCityTown.setText(fullAddress);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                //mCityTown.setText(lattitude);
+                mSuburb.setText(lattitude+","+longitude);
 
             }else{
 
