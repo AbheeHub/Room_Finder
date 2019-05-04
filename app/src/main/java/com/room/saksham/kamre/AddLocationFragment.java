@@ -498,14 +498,14 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                     //String country = addresses.get(0).getCountryName();
                     //String postalcode = addresses.get(0).getPostalCode();
                     String fullAddress = area + ", " + city ;
-                    mCityTown.setText(fullAddress);
+                    mSuburb.setText(fullAddress);
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 //mCityTown.setText(lattitude);
-                mSuburb.setText(lattitude+","+longitude);
+                mCityTown.setText(lattitude+","+longitude);
 
             } else  if (location1 != null) {
                 double latti = location1.getLatitude();
@@ -522,14 +522,14 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                     //String country = addresses.get(0).getCountryName();
                     //String postalcode = addresses.get(0).getPostalCode();
                     String fullAddress = area + ", " + city ;
-                    mCityTown.setText(fullAddress);
+                    mSuburb.setText(fullAddress);
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 //mCityTown.setText(lattitude);
-                mSuburb.setText(lattitude+","+longitude);
+                mCityTown.setText(lattitude+","+longitude);
 
 
             } else  if (location2 != null) {
@@ -547,14 +547,14 @@ public class AddLocationFragment extends Fragment implements View.OnClickListene
                     //String country = addresses.get(0).getCountryName();
                     //String postalcode = addresses.get(0).getPostalCode();
                     String fullAddress = area + ", " + city;
-                    mCityTown.setText(fullAddress);
+                    mSuburb.setText(fullAddress);
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 //mCityTown.setText(lattitude);
-                mSuburb.setText(lattitude+","+longitude);
+                mCityTown.setText(lattitude+","+longitude);
 
             }else{
 
