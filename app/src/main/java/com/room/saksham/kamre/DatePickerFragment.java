@@ -27,11 +27,16 @@ public class DatePickerFragment extends DialogFragment {
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
 
-        //listener to be implemented by the parent activity
-        DatePickerDialog.OnDateSetListener listener = (DatePickerDialog.OnDateSetListener)getActivity();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener)getActivity(),year,month,day);
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()); //for setting minimum date as current date
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis() + 14 * 24 * 60 * 60 * 1000); //for setting maximum date upto 14 days more with current date i.e. total 15 days.
+        return datePickerDialog;
 
-        //create and return a new instance of DatePickerDialog
-        return new DatePickerDialog(getActivity(), listener, year, month, day);
+//        //listener to be implemented by the parent activity
+//        DatePickerDialog.OnDateSetListener listener = (DatePickerDialog.OnDateSetListener)getActivity();
+//
+//        //create and return a new instance of DatePickerDialog
+//        return new DatePickerDialog(getActivity(), listener, year, month, day);
     }
 
 }

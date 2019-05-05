@@ -359,7 +359,7 @@
                         android:paddingLeft="@dimen/card_vertical"
                         android:paddingRight="5dp"
                         android:paddingTop="@dimen/card_vertical"
-                        android:text="$"
+                        android:text="₹"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorAccent"
                         android:textSize="18sp" />

@@ -39,7 +39,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/price_sign_label"
                     android:layout_gravity="bottom"
-                    android:text="$"
+                    android:text="₹"
                     android:textColor="#ffffff"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
