@@ -158,6 +158,33 @@ public class RoomDetailActivity extends AppCompatActivity implements RoomImageOn
         mSharedOrNot.setText(roomObject.getString("roomSharing"));
         mSuburb.setText(roomObject.getString("roomSuburb"));
         mCity.setText(roomObject.getString("roomCity"));
+        mSuburb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String location = mCity.getText().toString();
+                String urlAddress = "http://maps.google.com/maps?q="+ location;
+                Intent map = new Intent(Intent.ACTION_VIEW, Uri.parse(urlAddress));
+                startActivity(map);
+            }
+        });
+        mCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String location = mCity.getText().toString();
+                String urlAddress = "http://maps.google.com/maps?q="+ location;
+                Intent map = new Intent(Intent.ACTION_VIEW, Uri.parse(urlAddress));
+                startActivity(map);
+            }
+        });
+        mLocationImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String location = mCity.getText().toString();
+                String uri = "http://maps.google.com/maps?saddr=" + "&daddr=" + location ;
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
 
         mBedrooms.setText(Integer.toString(roomObject.getInt("roomBedrooms")));
         mBathrooms.setText(Integer.toString(roomObject.getInt("roomBathrooms")));
