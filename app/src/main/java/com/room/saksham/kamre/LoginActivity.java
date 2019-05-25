@@ -58,11 +58,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
     private TextView mSignUpTextView;
+    public TextView forgetpass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        forgetpass=(TextView)findViewById(R.id.forgot);
+        forgetpass.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(LoginActivity.this,forgotpassword.class);
+                startActivity(i);
+            }
+        });
         // Set up the login form.
         mUsername = (AutoCompleteTextView)findViewById(R.id.username);
         populateAutoComplete();

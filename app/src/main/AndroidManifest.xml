@@ -110,6 +110,8 @@
         <activity android:name=".NewsAndNotifications"
             android:label="News and Notifications"
             android:theme="@style/AppTheme" />
+        <activity android:name=".forgotpassword"
+            android:label="Forget Password"/>
     </application>
 
 </manifest>

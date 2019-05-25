@@ -57,6 +57,14 @@
                 android:id="@+id/sign_up_textView"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Forget Password"
+                android:id="@+id/forgot"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp" />
 
         </LinearLayout>
     </ScrollView>
