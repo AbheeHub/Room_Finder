@@ -61,11 +61,11 @@ public class ContactUsActivity extends AppCompatActivity {
         mLayoutWhatsApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent whatsAppIntent = new Intent(Intent.ACTION_SEND);
-                whatsAppIntent.putExtra(Intent.EXTRA_TEXT, "Hi, I've just come across your listing on the Rooms" +
-                        "app and would like to see a few more pictures and possibly come see the place. " +
-                        "Looking forward to hearing from you. Cheers.");
-                whatsAppIntent.setType("text/plain");
+                Intent whatsAppIntent = new Intent("android.intent.action.MAIN");
+                whatsAppIntent.setAction(Intent.ACTION_VIEW);
+                whatsAppIntent.setPackage("com.whatsapp");
+                String url = "https://api.whatsapp.com/send?phone=" + "+919672234498" + "&text=" + "Hi I want to contact you regarding your Ruumz android app.\nAnd I found this contact number from your Ruumz Project from Github.";
+                whatsAppIntent.setData(Uri.parse(url));
                 //check id there is whatsapp installed
                 if(whatsAppIntent.resolveActivity(getPackageManager()) != null){
                     whatsAppIntent.setPackage("com.whatsapp");

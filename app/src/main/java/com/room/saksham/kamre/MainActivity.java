@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 Intent shareAppIntent = new Intent();
                 shareAppIntent.setAction(Intent.ACTION_SEND);
-                shareAppIntent.putExtra(Intent.EXTRA_TEXT, "Get the Rooms App \nhttp://rooms.co.zw");
+                shareAppIntent.putExtra(Intent.EXTRA_TEXT, "Don't forget to share our Rooms app.\nYou can download the app from here:-\nhttps://drive.google.com/file/d/1--qwD3lfnBl3bsHVL5Ma81S7VMhhOQ3l/view?usp=drivesdk");
                 shareAppIntent.setType("text/plain");
                 Intent chooser = Intent.createChooser(shareAppIntent, "Share App Via:");
                 //verify whether there is an app capable of handling the intent
